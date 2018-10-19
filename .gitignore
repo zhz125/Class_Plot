@@ -1,0 +1,12 @@
+# ignore all the swap file excluding .gitignore
+.*
+!.gitignore
+!.git
+
+# ignore the example folder
+Example_input+output/*
+
+# ignore the input folder
+input_files/*
+
+
