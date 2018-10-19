@@ -11,6 +11,11 @@
 #  @output: plots (static:png, interactive:html) in the folder plots
 ###
 
+#   x-axis represents classes xlogp values (median xlogpg of all the class members)
+#   y_axis represents classes -log(classes pvalues)
+#   color code: class upratio (found using fold change)
+#               red -> class upratio = 1
+#               blue -> class upratio = 0
 impactPlot <- function(inputdf) {
   p2 <- ggplot(inputdf,aes(x=class_xlogp,y=-log(pvalue)))
   p2 <- p2 + geom_point(aes(size=csize, color=upratio)) +
