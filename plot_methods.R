@@ -20,7 +20,7 @@ impactPlot <- function(inputdf) {
   p2 <- ggplot(inputdf,aes(x=class_xlogp,y=-log(pvalue)))
   p2 <- p2 + geom_point(aes(size=csize, color=upratio)) +
     scale_color_gradient(low = "blue", high = "red", limits=c(0,1))+
-    scale_size(range = c(5, 30)) +
+    scale_size(range = c(3, 10)) +
     scale_y_continuous("-log (pvalue)",limits = c(0, max(-log(inputdf$pvalue))+4  )) +
     scale_x_continuous(" median XlogP of clusters ") +
     theme_bw() +
@@ -50,7 +50,7 @@ impactPlot <- function(inputdf) {
 
 interactivePlot <- function(clusterdf) {
     p2 <- ggplot(inputdf,aes(label=classes,label2=pvalue, label3=csize,label4=compounds_names))
-    p2 <- p2 + geom_point(aes(x=class_xlogp,y=-log(pvalue),size=csize, color=upratio)) +
+    p2 <- p2 + geom_point(aes(x=class_xlogp,y=-log(pvalue),size=csize*0.1, color=upratio)) +
     scale_color_gradient(low = "blue", high = "red", limits=c(0,1))+
     scale_size(range = c(5, 30)) +
     scale_y_continuous("-log (pvalue)",limits = c(0, max(-log(inputdf$pvalue))+5  )) +
